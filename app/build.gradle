@@ -40,13 +40,13 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'androidx.browser:browser:1.2.0'
     implementation 'androidx.core:core-ktx:1.2.0-rc01'
-    implementation 'androidx.fragment:fragment-ktx:1.2.0-rc02'
-    implementation 'com.google.android.material:material:1.2.0-alpha02'
+    implementation 'androidx.fragment:fragment-ktx:1.2.0-rc04'
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
