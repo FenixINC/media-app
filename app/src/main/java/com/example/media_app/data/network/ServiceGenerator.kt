@@ -1,6 +1,5 @@
 package com.example.media_app.data.network
 
-import android.os.Build
 import com.example.media_app.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -18,13 +17,15 @@ object ServiceGenerator {
         Timber.d("[API BASE URL] %s", BuildConfig.API_BASE_URL)
 
         val apiBaseUrl = BuildConfig.API_BASE_URL
+        val apiKey = "5614ba0e58894bf287985ae0672af8ee"
 
         httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor { chain ->
             val request = chain.request().newBuilder()
-                .addHeader("DEVICE-OS", "ANDROID")
-                .addHeader("DEVICE-OS-VERSION", Build.VERSION.RELEASE)
-                .addHeader("DEVICE-GENERAL-INFO", Build.MODEL)
+//                .addHeader("DEVICE-OS", "ANDROID")
+//                .addHeader("DEVICE-OS-VERSION", Build.VERSION.RELEASE)
+//                .addHeader("DEVICE-GENERAL-INFO", Build.MODEL)
+                .addHeader("Authorization", "Bearer $apiKey")
                 .build()
             chain.proceed(request)
         }

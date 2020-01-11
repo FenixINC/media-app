@@ -39,13 +39,14 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.core:core-ktx:1.2.0-rc01'
+    implementation 'androidx.fragment:fragment-ktx:1.2.0-rc04'
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.browser:browser:1.2.0'
-    implementation 'androidx.core:core-ktx:1.2.0-rc01'
-    implementation 'androidx.fragment:fragment-ktx:1.2.0-rc04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation 'com.google.android.material:material:1.2.0-alpha03'
 
     // Retrofit
@@ -53,9 +54,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     // Glide
-    implementation "com.github.bumptech.glide:glide:$glideLibVersion"
-    implementation "com.github.bumptech.glide:okhttp3-integration:$glideLibVersion"
-    implementation 'jp.wasabeef:glide-transformations:4.1.0'
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glideVersion"
+    implementation "jp.wasabeef:glide-transformations:$glideTransformationVersion"
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
@@ -63,7 +64,7 @@ dependencies {
     // Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
-    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutineAdapterVersion"
 
     // Architecture Components:
     // Room:
@@ -72,7 +73,8 @@ dependencies {
     kapt "androidx.room:room-compiler:$roomVersion"
     // Lifecycle:
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
+//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
 
     // Kotlin Coroutines with Architecture Components:
     // ViewModelScope:
@@ -87,6 +89,7 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
 
+    // Test:
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

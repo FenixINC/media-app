@@ -1,2 +1,2 @@
-package com.example.news_app.domain
+package com.example.media_app.domain
 

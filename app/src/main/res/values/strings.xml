@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">media-app</string>
+
+    <string name="api_key">5614ba0e58894bf287985ae0672af8ee</string>
+
+    <!--  Headers:  -->
+    <string name="header_top_headline">Top Headlines</string>
+
+    <!--  Bottom navigation:  -->
+    <string name="bottom_nav_news">News</string>
+    <string name="bottom_nav_search">Search</string>
+    <string name="bottom_nav_favorites">Favorites</string>
+
+    <string name="message_empty_data_swipe_refresh">There no data.\nSwipe to refresh.</string>
+    <string name="message_empty_data">There no data.</string>
+    <string name="visit_website">Visit Website</string>
 </resources>
