@@ -1,7 +1,6 @@
 package com.example.media_app.data.network
 
 import com.example.media_app.BuildConfig
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -33,7 +32,6 @@ object ServiceGenerator {
         builder = Retrofit.Builder()
             .baseUrl(apiBaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
     }
 
     fun <S> createService(serviceClass: Class<S>): S {
