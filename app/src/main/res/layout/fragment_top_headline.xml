@@ -22,7 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/light_grey">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh"
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="@{showProgress ? View.GONE : View.VISIBLE}"
-                tools:listitem="@layout/item_tv_show" />
+                tools:listitem="@layout/item_article" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <TextView

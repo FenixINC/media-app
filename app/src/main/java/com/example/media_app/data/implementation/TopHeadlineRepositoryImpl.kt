@@ -6,6 +6,7 @@ import com.example.media_app.data.entity.TopHeadline
 import com.example.media_app.data.network.ServiceGenerator
 import com.example.media_app.data.network.service.TopHeadlineService
 import com.example.media_app.domain.repository.TopHeadlineRepository
+import com.example.media_app.utils.Constants
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,7 +21,8 @@ class TopHeadlineRepositoryImpl : TopHeadlineRepository {
     override fun doLoadTopHeadlineList(scope: CoroutineScope): MutableLiveData<ResultState<TopHeadline>> {
         scope.launch(Dispatchers.Main) {
             try {
-                val response = mService.getTopHeadlineList("us")
+                mMutableLiveData.value = ResultState.Loading()
+                val response = mService.getTopHeadlineList(Constants.COUNTRY_US)
                 mMutableLiveData.value = ResultState.Success(response)
             } catch (e: Exception) {
                 Timber.e(e)
