@@ -64,7 +64,7 @@ class TopHeadlineFragment : Fragment(), TopHeadlineListener {
     }
 
     private fun doLoadTvShowList(scope: CoroutineScope) {
-        mViewModel.loadTopHeadlineList(scope)?.observe(this@TopHeadlineFragment, Observer { result ->
+        mViewModel.loadTopHeadlineList(scope)?.observe(viewLifecycleOwner, Observer { result ->
             result?.let {
                 handleResult(result)
             }
