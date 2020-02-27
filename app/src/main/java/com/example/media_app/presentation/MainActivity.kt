@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setSupportActionBar(mBinding.toolbar as Toolbar)
+        setSupportActionBar(mBinding.toolbar)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, TopHeadlineFragment.newInstance())
