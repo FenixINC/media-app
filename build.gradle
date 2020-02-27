@@ -16,6 +16,8 @@ buildscript {
         retrofitVersion = '2.7.1'
         roomVersion = '2.2.4'
         lifecycleVersion = '2.2.0'
+        navigationVersion = '2.2.1'
+        koinVersion = '2.0.1'
     }
 
     repositories {

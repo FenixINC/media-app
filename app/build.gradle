@@ -87,6 +87,14 @@ dependencies {
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
 
+    // Navigator
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Koin
+    implementation "org.koin:koin-core:$koinVersion"
+    implementation "org.koin:koin-android-viewmodel:$koinVersion"
+
     // Others
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.facebook.stetho:stetho:1.5.1'
