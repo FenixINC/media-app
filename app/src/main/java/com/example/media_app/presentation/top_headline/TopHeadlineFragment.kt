@@ -9,7 +9,6 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,8 +24,8 @@ import kotlinx.coroutines.CoroutineScope
 class TopHeadlineFragment : Fragment(), TopHeadlineListener {
 
     private lateinit var mBinding: FragmentTopHeadlineBinding
-        private val mViewModel by viewModels<TopHeadlineViewModel> { TopHeadlineViewModel.Factory(TopHeadlineRepositoryImpl()) }
-//    private lateinit var mViewModel: TopHeadlineViewModel
+    private val mViewModel by viewModels<TopHeadlineViewModel> { TopHeadlineViewModel.Factory(TopHeadlineRepositoryImpl()) }
+    //    private lateinit var mViewModel: TopHeadlineViewModel
     private lateinit var mAdapter: TopHeadlineAdapter
 
     companion object {

@@ -1,7 +1,9 @@
-package com.example.media_app
+package com.example.media_app.presentation
 
 import android.app.Application
 import com.facebook.stetho.Stetho
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 import timber.log.Timber
 
 class MediaApplication : Application() {
@@ -19,5 +21,15 @@ class MediaApplication : Application() {
         sInstance = this
         Stetho.initializeWithDefaults(this@MediaApplication)
         Timber.plant(Timber.DebugTree())
+        setKoin()
+    }
+
+    private fun setKoin() = startKoin {
+        androidContext(this@MediaApplication)
+        modules(listOf(
+            viewModelModule,
+//            bindingModule,
+            repositoryModule
+        ))
     }
 }

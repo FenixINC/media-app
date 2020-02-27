@@ -16,7 +16,8 @@ class TopHeadlineViewModel() : ViewModel() {
     fun loadTopHeadlineList(scope: CoroutineScope) = mRepository?.doLoadTopHeadlineList(scope)
 
     @Suppress("UNCHECKED_CAST")
-    class Factory(private val repository: TopHeadlineRepository) : ViewModelProvider.NewInstanceFactory() {
+    class Factory(private val repository: TopHeadlineRepository) :
+        ViewModelProvider.NewInstanceFactory() {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return TopHeadlineViewModel(repository) as T
         }
