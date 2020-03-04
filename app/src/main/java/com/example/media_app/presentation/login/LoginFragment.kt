@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.navigation.fragment.findNavController
 import com.example.media_app.R
-import com.example.media_app.databinding.FragmentLoginBinding
 import com.example.media_app.presentation.base.BaseFragment
 import org.koin.android.ext.android.inject
 
-class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
+class LoginFragment : BaseFragment<LoginViewModel>() {
 
     override val viewModel by inject<LoginViewModel>()
 

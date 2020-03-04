@@ -59,12 +59,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:menu="@menu/bottom_navigation_items" />
+                app:menu="@menu/bottom_navigation_menu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!--        <include-->
-        <!--            android:id="@+id/navigation_layout"-->
-        <!--            layout="@layout/navigation_view" />-->
-
+        <include
+            android:id="@+id/navigation_layout"
+            layout="@layout/navigation_view" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

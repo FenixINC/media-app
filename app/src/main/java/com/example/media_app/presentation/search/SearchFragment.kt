@@ -1,20 +1,18 @@
-package com.example.media_app.presentation.news
+package com.example.media_app.presentation.search
 
 import android.os.Bundle
-import androidx.activity.addCallback
 import com.example.media_app.R
 import com.example.media_app.presentation.base.BaseFragment
 import org.koin.android.ext.android.inject
 
-class NewsFragment : BaseFragment<NewsViewModel>() {
+class SearchFragment : BaseFragment<SearchViewModel>() {
 
-    override val viewModel by inject<NewsViewModel>()
+    override val viewModel by inject<SearchViewModel>()
 
-    override fun getLayoutRes() = R.layout.fragment_news
+    override fun getLayoutRes() = R.layout.fragment_search
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity?.title = getString(R.string.header_news)
     }
 
     override fun onBackPressed() {
