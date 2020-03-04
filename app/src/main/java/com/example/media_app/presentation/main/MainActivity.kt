@@ -1,8 +1,8 @@
 package com.example.media_app.presentation.main
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
 //        binding.navigationLayout.setupWithNavController(navController)
 //        binding.bottomNavigation.setupWithNavController(navController)
 
-//        navController.add
+//        navController.currentDestination
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -37,15 +37,23 @@ class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            android.R.id.home -> {
-                onBackPressed()
-                return true
-            }
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
         }
-        return super.onOptionsItemSelected(item)
     }
+
+    //    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        when (item?.itemId) {
+//            android.R.id.home -> {
+//                onBackPressed()
+//                return true
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
     private fun setupActionBar(navController: NavController) {
         setSupportActionBar(binding.toolbar)
