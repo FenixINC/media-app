@@ -13,7 +13,7 @@ import androidx.lifecycle.LifecycleOwner
 
 abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
 
-    private lateinit var onBackPressedCallback: OnBackPressedCallback
+//    private lateinit var onBackPressedCallback: OnBackPressedCallback
 
     protected abstract val viewModel: VM
     protected lateinit var binding: ViewDataBinding
