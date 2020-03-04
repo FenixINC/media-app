@@ -26,24 +26,24 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
     @LayoutRes
     protected abstract fun getLayoutRes(): Int
 
-    override fun onStart() {
-        super.onStart()
-        setBackButtonDispatcher()
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        setBackButtonDispatcher()
+//    }
 
-    override fun onStop() {
-        super.onStop()
-        onBackPressedCallback.remove()
-    }
+//    override fun onStop() {
+//        super.onStop()
+//        onBackPressedCallback.remove()
+//    }
 
-    private fun setBackButtonDispatcher() {
-        onBackPressedCallback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                onBackPressed()
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-    }
+//    private fun setBackButtonDispatcher() {
+//        onBackPressedCallback = object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+////                onBackPressed()
+//            }
+//        }
+//        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+//    }
 
-    protected open fun onBackPressed() {}
+//    protected open fun onBackPressed() {}
 }

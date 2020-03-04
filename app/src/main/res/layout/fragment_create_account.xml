@@ -6,11 +6,10 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btn_item_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Open item details"
+            android:text="Create Account"
             android:textAllCaps="false" />
     </LinearLayout>
 </layout>

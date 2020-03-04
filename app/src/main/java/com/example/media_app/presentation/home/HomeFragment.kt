@@ -15,8 +15,8 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         super.onActivityCreated(savedInstanceState)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        activity?.finish()
-    }
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        activity?.finish()
+//    }
 }

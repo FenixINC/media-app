@@ -1,9 +1,10 @@
 package com.example.media_app.presentation.news
 
 import android.os.Bundle
-import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import com.example.media_app.R
 import com.example.media_app.presentation.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_search.*
 import org.koin.android.ext.android.inject
 
 class NewsFragment : BaseFragment<NewsViewModel>() {
@@ -14,11 +15,14 @@ class NewsFragment : BaseFragment<NewsViewModel>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity?.title = getString(R.string.header_news)
+
+        btn_item_details.setOnClickListener {
+            findNavController().navigate(R.id.action_news_to_item_details)
+        }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        activity?.finish()
-    }
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        activity?.finish()
+//    }
 }

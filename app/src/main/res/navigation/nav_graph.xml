@@ -47,6 +47,22 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_login_to_create_account"
+            app:destination="@id/create_account_fragment" />
+    </fragment>
+
+    <!--  CreateAccountFragment  -->
+    <fragment
+        android:id="@+id/create_account_fragment"
+        android:name="com.example.media_app.presentation.create_account.CreateAccountFragment"
+        android:label="@string/header_create_account"
+        tools:layout="@layout/fragment_create_account">
+
+        <action
+            android:id="@+id/action_create_account_to_news"
+            app:destination="@+id/news_fragment" />
     </fragment>
 
     <!--  HomeFragment  -->
@@ -61,10 +77,13 @@
         android:id="@+id/news_fragment"
         android:name="com.example.media_app.presentation.news.NewsFragment"
         android:label="@string/header_news"
-        tools:layout="@layout/fragment_top_headline">
+        tools:layout="@layout/fragment_news">
         <!--        <action-->
         <!--            android:id="@+id/action_news_to_search"-->
         <!--            app:destination="@id/search_fragment" />-->
+        <action
+            android:id="@+id/action_news_to_item_details"
+            app:destination="@id/item_details_fragment" />
     </fragment>
 
     <!--  SearchFragment  -->
@@ -76,6 +95,9 @@
         <!--        <action-->
         <!--            android:id="@+id/action_search_to_news"-->
         <!--            app:destination="@id/news_fragment" />-->
+        <action
+            android:id="@+id/action_search_to_item_details"
+            app:destination="@id/item_details_fragment" />
     </fragment>
 
     <!--  FavoriteFragment  -->
@@ -85,5 +107,19 @@
         android:label="Favorites"
         tools:layout="@layout/fragment_favorite" />
 
-    <!--  NewsDetailFragment  -->
+    <!--  ItemDetailFragment  -->
+    <fragment
+        android:id="@+id/item_details_fragment"
+        android:name="com.example.media_app.presentation.general_details.ItemDetailFragment"
+        android:label="@string/header_item_details"
+        tools:layout="@layout/fragment_item_details">
+
+<!--        <action-->
+<!--            android:id="@+id/action_item_details_to_news"-->
+<!--            app:destination="@id/news_fragment" />-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_item_details_to_search"-->
+<!--            app:destination="@id/search_fragment" />-->
+    </fragment>
 </navigation>

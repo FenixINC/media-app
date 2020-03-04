@@ -1,10 +1,10 @@
 package com.example.media_app.presentation.login
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.navigation.fragment.findNavController
 import com.example.media_app.R
 import com.example.media_app.presentation.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_login.*
 import org.koin.android.ext.android.inject
 
 class LoginFragment : BaseFragment<LoginViewModel>() {
@@ -16,8 +16,12 @@ class LoginFragment : BaseFragment<LoginViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        Handler().postDelayed({
+        btn_login.setOnClickListener {
             findNavController().navigate(R.id.action_login_to_news)
-        }, 1500)
+        }
+
+        btn_create_account.setOnClickListener {
+            findNavController().navigate(R.id.action_login_to_create_account)
+        }
     }
 }
