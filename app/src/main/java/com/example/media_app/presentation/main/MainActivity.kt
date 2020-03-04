@@ -11,7 +11,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.media_app.R
 import com.example.media_app.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.navigation_view.view.*
 
 class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelectedListener*/ {
 
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId) {
+        when (item?.itemId) {
             android.R.id.home -> {
                 onBackPressed()
                 return true
@@ -60,7 +59,10 @@ class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
                 ),
                 drawerLayout = binding.drawerLayout
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(
+                navController = navController,
+                configuration = appBarConfiguration
+        )
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
