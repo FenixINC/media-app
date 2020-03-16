@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/news_fragment">
+
+    <!--  NewsFragment  -->
+    <fragment
+        android:id="@+id/news_fragment"
+        android:name="com.example.media_app.presentation.news.NewsFragment"
+        android:label="@string/header_news"
+        tools:layout="@layout/fragment_news">
+
+        <!--        <action-->
+        <!--            android:id="@+id/action_news_to_search"-->
+        <!--            app:destination="@id/search_fragment" />-->
+
+        <action
+            android:id="@+id/action_news_to_item_details"
+            app:destination="@id/item_details_fragment" />
+    </fragment>
+
+    <!--  SearchFragment  -->
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.example.media_app.presentation.search.SearchFragment"
+        android:label="@string/header_search"
+        tools:layout="@layout/fragment_search">
+
+        <!--        <action-->
+        <!--            android:id="@+id/action_search_to_news"-->
+        <!--            app:destination="@id/news_fragment" />-->
+
+        <action
+            android:id="@+id/action_search_to_item_details"
+            app:destination="@id/item_details_fragment" />
+    </fragment>
+
+    <!--  FavoriteFragment  -->
+    <fragment
+        android:id="@+id/favorite_fragment"
+        android:name="com.example.media_app.presentation.favorite.FavoriteFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite" />
+
+    <!--  ItemDetailFragment  -->
+    <fragment
+        android:id="@+id/item_details_fragment"
+        android:name="com.example.media_app.presentation.general_details.ItemDetailFragment"
+        android:label="@string/header_item_details"
+        tools:layout="@layout/fragment_item_details" />
+</navigation>

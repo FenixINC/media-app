@@ -24,7 +24,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:showIn="@layout/activity_main" />
+                tools:showIn="@layout/activity_home" />
 
             <!--            <FrameLayout-->
             <!--                android:id="@+id/container"-->
@@ -36,7 +36,7 @@
             <!--                app:layout_constraintTop_toBottomOf="@id/toolbar">-->
 
             <fragment
-                android:id="@+id/fragment_nav_host"
+                android:id="@+id/fragment_main_nav_host"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -45,7 +45,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/toolbar"
-                app:navGraph="@navigation/nav_graph" />
+                app:navGraph="@navigation/home_nav_graph" />
             <!--            </FrameLayout>-->
 
             <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -16,14 +16,8 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
         btn_item_details.setOnClickListener {
             findNavController().navigate(R.id.action_search_to_item_details)
         }
     }
-
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        activity?.finish()
-//    }
 }

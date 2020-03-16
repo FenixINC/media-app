@@ -1,4 +1,4 @@
-package com.example.media_app.presentation.main
+package com.example.media_app.presentation.activity.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,17 +10,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.media_app.R
-import com.example.media_app.databinding.ActivityMainBinding
+import com.example.media_app.databinding.ActivityHomeBinding
 
-class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelectedListener*/ {
+class HomeActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelectedListener*/ {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
 
-        val navController = findNavController(R.id.fragment_nav_host)
+        val navController = findNavController(R.id.fragment_main_nav_host)
         setupActionBar(navController)
 //        setupSideMenu(navController)
         setupBottomNavMenu(navController)
@@ -41,11 +41,11 @@ class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            return super.onBackPressed()
         }
     }
 
-    //    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 //        when (item?.itemId) {
 //            android.R.id.home -> {
 //                onBackPressed()
@@ -57,19 +57,18 @@ class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
 
     private fun setupActionBar(navController: NavController) {
         setSupportActionBar(binding.toolbar)
-
         val appBarConfiguration = AppBarConfiguration(
-                topLevelDestinationIds = setOf(
-                        R.id.login_fragment,
-                        R.id.news_fragment,
-                        R.id.search_fragment,
-                        R.id.favorite_fragment
-                ),
-                drawerLayout = binding.drawerLayout
+            topLevelDestinationIds = setOf(
+//                R.id.login_fragment,
+//                R.id.news_fragment,
+//                R.id.search_fragment,
+//                R.id.favorite_fragment
+            ),
+            drawerLayout = binding.drawerLayout
         )
         setupActionBarWithNavController(
-                navController = navController,
-                configuration = appBarConfiguration
+            navController = navController,
+            configuration = appBarConfiguration
         )
     }
 
