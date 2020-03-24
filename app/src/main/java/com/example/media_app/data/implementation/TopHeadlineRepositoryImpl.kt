@@ -3,13 +3,11 @@ package com.example.media_app.data.implementation
 import androidx.lifecycle.MutableLiveData
 import com.example.media_app.data.entity.ResultState
 import com.example.media_app.data.entity.TopHeadline
-import com.example.media_app.data.network.ServiceGenerator
-import com.example.media_app.data.network.service.TopHeadlineService
+import com.example.media_app.data.network.retrofit.ServiceGenerator
+import com.example.media_app.data.network.retrofit.service.TopHeadlineService
 import com.example.media_app.domain.repository.TopHeadlineRepository
 import com.example.media_app.utils.Constants
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import timber.log.Timber
 
 class TopHeadlineRepositoryImpl : TopHeadlineRepository {

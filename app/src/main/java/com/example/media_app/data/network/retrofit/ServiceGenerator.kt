@@ -1,4 +1,4 @@
-package com.example.media_app.data.network
+package com.example.media_app.data.network.retrofit
 
 import com.example.media_app.BuildConfig
 import okhttp3.OkHttpClient
