@@ -135,7 +135,7 @@ class TopHeadlineFragment : Fragment(), TopHeadlineListener {
         private class ViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
             fun bind(data: Any, listener: TopHeadlineListener) {
                 binding.setVariable(BR.model, data)
-                binding.setVariable(BR.clickListener, listener)
+//                binding.setVariable(BR.clickListener, listener)
             }
         }
     }

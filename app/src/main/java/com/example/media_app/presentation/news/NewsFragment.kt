@@ -1,13 +1,20 @@
 package com.example.media_app.presentation.news
 
 import android.os.Bundle
-import androidx.navigation.fragment.findNavController
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.media_app.R
+import com.example.media_app.data.entity.Article
+import com.example.media_app.data.entity.TopHeadline
 import com.example.media_app.presentation.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_search.*
+import com.example.media_app.utils.ViewModelData
+import kotlinx.android.synthetic.main.fragment_news.*
 import org.koin.android.ext.android.inject
 
 class NewsFragment : BaseFragment<NewsViewModel>() {
+
+    private lateinit var newsAdapter: NewsAdapter
 
     override val viewModel by inject<NewsViewModel>()
 
@@ -16,13 +23,30 @@ class NewsFragment : BaseFragment<NewsViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        btn_item_details.setOnClickListener {
-            findNavController().navigate(R.id.action_news_to_item_details)
+        setupAdapter()
+        loadNews()
+    }
+
+    private fun setupAdapter() {
+        newsAdapter = NewsAdapter { openNewsDetails(it) }
+        recycler_view.layoutManager = LinearLayoutManager(activity)
+        recycler_view.adapter = newsAdapter
+    }
+
+    private fun loadNews() {
+        viewModel.loadNews()
+        viewModel.newsData.observe(viewLifecycleOwner, Observer { setNewsList(it) })
+    }
+
+    private fun setNewsList(newsData: ViewModelData<TopHeadline, Exception>) {
+        if (newsData.data != null) {
+            newsAdapter.setList(newsData.data.articles)
+        } else {
+            newsData.error
         }
     }
 
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        activity?.finish()
-//    }
+    private fun openNewsDetails(article: Article) {
+        Toast.makeText(activity, article.title, Toast.LENGTH_SHORT).show()
+    }
 }

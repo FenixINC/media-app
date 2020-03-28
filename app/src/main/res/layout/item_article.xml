@@ -8,20 +8,16 @@
         <variable
             name="model"
             type="com.example.media_app.data.entity.Article" />
-
-        <variable
-            name="clickListener"
-            type="com.example.media_app.presentation.top_headline.TopHeadlineListener" />
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/layout_article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_start"
         android:layout_marginTop="@dimen/margin_top"
         android:layout_marginEnd="@dimen/margin_end"
         android:layout_marginBottom="@dimen/margin_bottom"
-        android:onClick="@{()-> clickListener.onItemClick(model)}"
         app:cardCornerRadius="@dimen/dp4"
         app:cardElevation="@dimen/dp1"
         tools:background="@color/grey">
