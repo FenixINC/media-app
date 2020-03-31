@@ -31,7 +31,7 @@ class NewsAdapter(private val newsListener: (Article) -> Unit) : RecyclerView.Ad
     class ViewHolder(private val binding: ItemArticleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(news: Article, listener: (Article) -> Unit) = with(binding) {
             model = news
-            layoutArticle.setOnClickListener { listener }
+            layoutArticle.setOnClickListener { listener(news) }
         }
     }
 }

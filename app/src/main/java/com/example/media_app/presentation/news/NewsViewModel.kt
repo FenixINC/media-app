@@ -11,10 +11,11 @@ class NewsViewModel : BaseViewModel() {
 
     private val newsRepository by inject<NewsRepository>()
 
-    val newsData = MutableLiveData<ViewModelData<TopHeadline, Exception>>()
+    val newsData = MutableLiveData<ViewModelData<TopHeadline, Exception, Boolean>>()
 
     fun loadNews() = newsRepository.loadNewsList(
             { newsData.postValue(ViewModelData(it)) },
-            { newsData.postValue(ViewModelData.error(it)) }
+            { newsData.postValue(ViewModelData.error(it)) },
+            { newsData.postValue(ViewModelData.progress(it)) }
     )
 }

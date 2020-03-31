@@ -56,8 +56,8 @@ object GraphQlGenerator {
             .addInterceptor { chain ->
                 val original = chain.request()
                 val builder = original.newBuilder().method(
-                    original.method(),
-                    original.body()
+                    original.method,
+                    original.body
                 )
                 builder
                     .addHeader("x-api-key", apiKey)
