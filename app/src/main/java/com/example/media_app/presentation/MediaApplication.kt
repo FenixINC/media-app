@@ -3,6 +3,7 @@ package com.example.media_app.presentation
 import android.app.Application
 import com.example.media_app.di.networkModule
 import com.example.media_app.di.repositoryModule
+import com.example.media_app.di.serviceModule
 import com.example.media_app.di.viewModelModule
 import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
@@ -31,9 +32,9 @@ class MediaApplication : Application() {
         androidContext(this@MediaApplication)
         modules(listOf(
                 viewModelModule,
-//            bindingModule,
                 repositoryModule,
-                networkModule
+                networkModule,
+                serviceModule
         ))
     }
 }
