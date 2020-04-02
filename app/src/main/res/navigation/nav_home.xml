@@ -5,6 +5,12 @@
     android:id="@+id/home_nav_graph"
     app:startDestination="@id/news_fragment">
 
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.media_app.presentation.home.HomeFragment"
+        android:label="@string/header_home"
+        tools:layout="@layout/fragment_home" />
+
     <!--  NewsFragment  -->
     <fragment
         android:id="@+id/news_fragment"

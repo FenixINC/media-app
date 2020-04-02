@@ -1,49 +1,66 @@
 package com.example.media_app.presentation.base
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
+import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
+import androidx.navigation.NavOptions
+import androidx.navigation.Navigator
+import androidx.navigation.fragment.findNavController
+import com.example.media_app.R
+import com.example.media_app.utils.createProgressBar
 
 abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
 
-//    private lateinit var onBackPressedCallback: OnBackPressedCallback
-
     protected abstract val viewModel: VM
-    protected lateinit var binding: ViewDataBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
-        return binding.root
+    protected var progressDialog: AlertDialog? = null
+
+    override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ): View = inflater.inflate(getLayoutRes(), container, false)
+
+    open fun onBackPressed() {
+        findNavController().popBackStack()
     }
 
     @LayoutRes
     protected abstract fun getLayoutRes(): Int
 
-//    override fun onStart() {
-//        super.onStart()
-//        setBackButtonDispatcher()
-//    }
+    protected fun getPrimaryColor() = context?.let {
+        val colorValue = TypedValue()
+        it.theme.resolveAttribute(R.attr.colorPrimary, colorValue, true)
+        colorValue.data
+    }
 
-//    override fun onStop() {
-//        super.onStop()
-//        onBackPressedCallback.remove()
-//    }
+    protected fun navigateSafe(
+            @IdRes resId: Int,
+            args: Bundle? = null,
+            navOptions: NavOptions? = null,
+            navExtras: Navigator.Extras? = null
+    ) {
+        val action = findNavController().currentDestination?.getAction(resId)
+                ?: findNavController().graph.getAction(resId)
+        if (action != null && findNavController().currentDestination?.id != action.destinationId) {
+            findNavController().navigate(resId, args, navOptions, navExtras)
+        }
+    }
 
-//    private fun setBackButtonDispatcher() {
-//        onBackPressedCallback = object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-////                onBackPressed()
-//            }
-//        }
-//        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-//    }
+    protected fun showLoading() = context?.let {
+        progressDialog = createProgressBar(it)
+        progressDialog?.show()
+    }
 
-//    protected open fun onBackPressed() {}
+    protected fun hideLoading() {
+        progressDialog?.dismiss()
+        progressDialog = null
+    }
 }

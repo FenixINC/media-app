@@ -13,6 +13,7 @@
     <string name="header_search">Search</string>
     <string name="header_favorites">Favorites</string>
     <string name="header_login">Login</string>
+    <string name="header_home">Home</string>
     <string name="header_create_account">CreateAccount</string>
     <string name="header_item_details">Item Details Fragment</string>
 

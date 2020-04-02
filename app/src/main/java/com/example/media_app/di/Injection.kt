@@ -2,7 +2,7 @@ package com.example.media_app.di
 
 import com.example.media_app.data.network.retrofit.service.TopHeadlineService
 import com.example.media_app.data.repository.NewsRepository
-import com.example.media_app.presentation.activity.main.MainViewModel
+import com.example.media_app.presentation.main.MainViewModel
 import com.example.media_app.presentation.favorite.FavoriteViewModel
 import com.example.media_app.presentation.home.HomeViewModel
 import com.example.media_app.presentation.login.LoginViewModel

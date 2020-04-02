@@ -1,4 +1,4 @@
-package com.example.media_app.presentation.activity.main
+package com.example.media_app.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,17 +10,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.media_app.R
-import com.example.media_app.databinding.ActivityHomeBinding
+import com.example.media_app.databinding.ActivityMainBinding
 
-class HomeActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelectedListener*/ {
+class MainActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelectedListener*/ {
 
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val navController = findNavController(R.id.fragment_main_nav_host)
+        val navController = findNavController(R.id.fragment_nav_host)
         setupActionBar(navController)
 //        setupSideMenu(navController)
         setupBottomNavMenu(navController)
@@ -45,30 +45,21 @@ class HomeActivity : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
         }
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-//        when (item?.itemId) {
-//            android.R.id.home -> {
-//                onBackPressed()
-//                return true
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
-
     private fun setupActionBar(navController: NavController) {
         setSupportActionBar(binding.toolbar)
         val appBarConfiguration = AppBarConfiguration(
-            topLevelDestinationIds = setOf(
+                topLevelDestinationIds = setOf(
 //                R.id.login_fragment,
-//                R.id.news_fragment,
-//                R.id.search_fragment,
-//                R.id.favorite_fragment
-            ),
-            drawerLayout = binding.drawerLayout
+                        R.id.home_fragment,
+                        R.id.news_fragment,
+                        R.id.search_fragment,
+                        R.id.favorite_fragment
+                ),
+                drawerLayout = binding.drawerLayout
         )
         setupActionBarWithNavController(
-            navController = navController,
-            configuration = appBarConfiguration
+                navController = navController,
+                configuration = appBarConfiguration
         )
     }
 

@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
@@ -13,20 +14,5 @@
             android:layout_height="300dp"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
-
-        <Button
-            android:id="@+id/btn_navigate_to_home_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Navigate to Home Activity"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_navigate_to_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Navigate to Login"
-            android:textAllCaps="false" />
     </LinearLayout>
 </layout>
