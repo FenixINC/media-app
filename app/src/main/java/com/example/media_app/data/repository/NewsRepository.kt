@@ -10,7 +10,7 @@ import org.koin.core.inject
 
 class NewsRepository : BaseRepository {
 
-    private val newsService: TopHeadlineService by inject()
+    private val newsService by inject<TopHeadlineService>()
 
     fun loadNewsList(onSuccess: (TopHeadline) -> Unit, onError: (e: Exception) -> Unit, onProgress: (Boolean) -> Unit) {
         CoroutineScope(Dispatchers.Main).launch {

@@ -113,7 +113,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     // Koin
-    def koin_version = "2.0.1"
+    def koin_version = "2.1.5"
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
