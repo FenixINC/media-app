@@ -58,9 +58,7 @@ val repositoryModule = module {
 }
 
 val serviceModule = module {
-    single {
-        get<Retrofit>().create(TopHeadlineService::class.java)
-    }
+    single { get<Retrofit>().create(TopHeadlineService::class.java) }
 }
 
 private fun provideGson(): Gson = GsonBuilder().create()
