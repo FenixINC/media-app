@@ -8,13 +8,11 @@ import com.example.media_app.databinding.ItemArticleBinding
 
 class NewsAdapter(private val newsListener: (Article) -> Unit) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
-    private val newsList: ArrayList<Article> = arrayListOf()
-
-    fun setList(list: List<Article>) {
-        newsList.clear()
-        newsList.addAll(list)
-        notifyDataSetChanged()
-    }
+    var newsList = mutableListOf<Article>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun getItemCount(): Int = newsList.size
 

@@ -41,7 +41,7 @@ class NewsFragment : BaseFragment<NewsViewModel>() {
 
     private fun setNewsList(newsData: ViewModelData<TopHeadline, Exception, Boolean>) {
         if (newsData.data != null) {
-            newsAdapter.setList(newsData.data.articles)
+            newsAdapter.newsList = newsData.data.articles.toMutableList()
         } else {
             newsData.error
         }
