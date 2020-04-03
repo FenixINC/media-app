@@ -23,6 +23,7 @@ class NewsFragment : BaseFragment<NewsViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+//        val s = ItemTouchHelper.SimpleCallback
         setupAdapter()
         loadNews()
     }

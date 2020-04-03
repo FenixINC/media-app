@@ -5,6 +5,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
@@ -27,6 +28,11 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View = inflater.inflate(getLayoutRes(), container, false)
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner) { onBackPressed() }
+    }
 
     open fun onBackPressed() {
         findNavController().popBackStack()
