@@ -1,4 +1,4 @@
-package com.example.media_app.presentation.create_account
+package com.example.media_app.presentation.createaccount
 
 import android.os.Bundle
 import com.example.media_app.R
