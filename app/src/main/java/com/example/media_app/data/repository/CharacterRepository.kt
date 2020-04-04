@@ -27,7 +27,6 @@ class CharacterRepository : BaseRepository {
 
     fun loadRandomCharacter(onSuccess: (List<CharacterResponse>) -> Unit, onError: (e: Exception) -> Unit, onProgress: (Boolean) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
-            val randomCharacterList = arrayListOf<CharacterResponse>()
             val asyncRequest = async {
                 characterService.getRandomCharacter()
             }
