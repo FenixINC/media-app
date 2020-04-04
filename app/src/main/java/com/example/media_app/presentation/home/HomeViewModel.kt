@@ -31,10 +31,4 @@ class HomeViewModel : BaseViewModel() {
             { characterLiveData.postValue(ViewModelData.error(error = it)) },
             { characterLiveData.postValue(ViewModelData.progress(progress = it)) }
     )
-
-    fun loadRandomCharacter() = characterRepository.loadRandomCharacter(
-            { characterLiveData.postValue(ViewModelData(data = it)) },
-            { characterLiveData.postValue(ViewModelData.error(error = it)) },
-            { characterLiveData.postValue(ViewModelData.progress(progress = it)) }
-    )
 }

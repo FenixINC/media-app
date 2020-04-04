@@ -32,14 +32,7 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
             viewModel.someText.set(binding.editText.text.toString())
         }
 
-//        viewModel.loadAllCharacters()
-//        viewModel.characterLiveData.observe(viewLifecycleOwner, Observer {
-//            val data = it
-//        })
-
-        for (i: Int in 1..10) {
-            viewModel.loadRandomCharacter()
-        }
+        viewModel.loadAllCharacters()
         viewModel.characterLiveData.observe(viewLifecycleOwner, Observer {
             val data = it
         })
