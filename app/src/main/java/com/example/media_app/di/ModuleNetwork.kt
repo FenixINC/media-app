@@ -1,9 +1,5 @@
 package com.example.media_app.di
 
-import com.example.media_app.data.network.retrofit.service.CharacterService
-import com.example.media_app.data.network.retrofit.service.TopHeadlineService
-import com.example.media_app.data.repository.CharacterRepository
-import com.example.media_app.data.repository.NewsRepository
 import com.example.media_app.presentation.favorite.FavoriteViewModel
 import com.example.media_app.presentation.home.HomeViewModel
 import com.example.media_app.presentation.login.LoginViewModel
@@ -37,19 +33,6 @@ private const val PROVIDE_OKHTTP_CLIENT = "okhttp_client"
 private const val PROVIDE_RETROFIT = "retrofit"
 private const val PROVIDE_GSON = "gson"
 
-// Provide Service
-private const val PROVIDE_NEWS_SERVICE = "news_service"
-
-val viewModelModule = module {
-    viewModel { SplashViewModel() }
-    viewModel { LoginViewModel() }
-    viewModel { MainViewModel() }
-    viewModel { HomeViewModel() }
-    viewModel { NewsViewModel() }
-    viewModel { SearchViewModel() }
-    viewModel { FavoriteViewModel() }
-}
-
 val networkModule = module {
     single(named(PROVIDE_BASE_URL)) { BASE_URL_BREAKING_BAD }
     single(named(PROVIDE_API_KEY)) { API_KEY }
@@ -57,16 +40,6 @@ val networkModule = module {
     single(named(PROVIDE_OKHTTP_CLIENT)) { provideOkHttpClient(get(named(PROVIDE_API_KEY))) }
     single(named(PROVIDE_CONVERTER_FACTORY)) { provideGsonConverterFactory(get(named(PROVIDE_GSON))) }
     single { provideRetrofit(get(named(PROVIDE_BASE_URL)), get(named(PROVIDE_CONVERTER_FACTORY)), get(named(PROVIDE_OKHTTP_CLIENT))) }
-}
-
-val repositoryModule = module {
-    single { NewsRepository() }
-    single { CharacterRepository() }
-}
-
-val serviceModule = module {
-    single { get<Retrofit>().create(TopHeadlineService::class.java) }
-    single { get<Retrofit>().create(CharacterService::class.java) }
 }
 
 private fun provideGson(): Gson = GsonBuilder().create()

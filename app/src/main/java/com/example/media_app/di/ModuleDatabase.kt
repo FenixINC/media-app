@@ -11,10 +11,6 @@ val databaseModule = module {
     single { provideDatabase() }
 }
 
-val daoModule = module {
-    single { get<AppDatabase>().characterDao() }
-}
-
 private fun provideDatabase(): AppDatabase =
         Room.databaseBuilder(MediaApplication.getAppInstance, AppDatabase::class.java, DATABASE_NAME)
                 .fallbackToDestructiveMigration()
