@@ -1,4 +1,4 @@
-package com.example.media_app.data.entity
+package com.example.media_app.data.network.dto
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -7,27 +7,27 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Article(
 
-    @SerializedName("source")
+        @SerializedName("source")
     var source: Source,
 
-    @SerializedName("author")
+        @SerializedName("author")
     var author: String? = "",
 
-    @SerializedName("title")
+        @SerializedName("title")
     var title: String? = "",
 
-    @SerializedName("description")
+        @SerializedName("description")
     var description: String? = "",
 
-    @SerializedName("url")
+        @SerializedName("url")
     var url: String? = "",
 
-    @SerializedName("urlToImage")
+        @SerializedName("urlToImage")
     var urlToImage: String? = "",
 
-    @SerializedName("publishedAt")
+        @SerializedName("publishedAt")
     var publishedAt: String? = "",
 
-    @SerializedName("content")
+        @SerializedName("content")
     var content: String? = ""
 ) : Parcelable

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.example.media_app.R
 import com.example.media_app.databinding.FragmentHomeBinding
 import com.example.media_app.presentation.base.BaseFragment
@@ -30,5 +31,17 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         binding.btnClick.setOnClickListener {
             viewModel.someText.set(binding.editText.text.toString())
         }
+
+//        viewModel.loadAllCharacters()
+//        viewModel.characterLiveData.observe(viewLifecycleOwner, Observer {
+//            val data = it
+//        })
+
+        for (i: Int in 1..10) {
+            viewModel.loadRandomCharacter()
+        }
+        viewModel.characterLiveData.observe(viewLifecycleOwner, Observer {
+            val data = it
+        })
     }
 }

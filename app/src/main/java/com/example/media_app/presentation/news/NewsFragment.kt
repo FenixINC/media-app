@@ -5,8 +5,8 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.media_app.R
-import com.example.media_app.data.entity.Article
-import com.example.media_app.data.entity.TopHeadline
+import com.example.media_app.data.network.dto.Article
+import com.example.media_app.data.network.dto.TopHeadline
 import com.example.media_app.presentation.base.BaseFragment
 import com.example.media_app.utils.ViewModelData
 import kotlinx.android.synthetic.main.fragment_news.*

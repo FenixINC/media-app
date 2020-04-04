@@ -3,7 +3,7 @@ package com.example.media_app.presentation.news
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.media_app.data.entity.Article
+import com.example.media_app.data.network.dto.Article
 import com.example.media_app.databinding.ItemArticleBinding
 
 class NewsAdapter(private val newsListener: (Article) -> Unit) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -28,7 +28,7 @@ class NewsAdapter(private val newsListener: (Article) -> Unit) : RecyclerView.Ad
 
     class ViewHolder(private val binding: ItemArticleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(news: Article, listener: (Article) -> Unit) = with(binding) {
-            model = news
+//            model = news
             layoutArticle.setOnClickListener { listener(news) }
         }
     }

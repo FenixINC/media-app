@@ -5,9 +5,9 @@
 
     <data>
 
-        <variable
-            name="model"
-            type="com.example.media_app.data.entity.Article" />
+<!--        <variable-->
+<!--            name="model"-->
+<!--            type="com.example.media_app.data.entity.Article" />-->
     </data>
 
     <androidx.cardview.widget.CardView
@@ -32,7 +32,6 @@
                 android:layout_width="110dp"
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
-                app:bindImage="@{model}"
                 tools:ignore="ContentDescription"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -48,7 +47,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:maxLines="2"
-                    android:text="@{model.title}"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     tools:text="@tools:sample/lorem/random" />
@@ -56,7 +54,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{model.publishedAt}"
                     tools:text="@tools:sample/date/ddmmyy" />
             </LinearLayout>
         </LinearLayout>

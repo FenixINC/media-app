@@ -1,11 +1,13 @@
 package com.example.media_app.di
 
+import com.example.media_app.data.network.retrofit.service.CharacterService
 import com.example.media_app.data.network.retrofit.service.TopHeadlineService
+import com.example.media_app.data.repository.CharacterRepository
 import com.example.media_app.data.repository.NewsRepository
-import com.example.media_app.presentation.main.MainViewModel
 import com.example.media_app.presentation.favorite.FavoriteViewModel
 import com.example.media_app.presentation.home.HomeViewModel
 import com.example.media_app.presentation.login.LoginViewModel
+import com.example.media_app.presentation.main.MainViewModel
 import com.example.media_app.presentation.news.NewsViewModel
 import com.example.media_app.presentation.search.SearchViewModel
 import com.example.media_app.presentation.splash.SplashViewModel
@@ -18,10 +20,14 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_URL = "https://newsapi.org/"
+// News
+private const val BASE_URL_NEWS = "https://newsapi.org/"
 private const val API_KEY = "5614ba0e58894bf287985ae0672af8ee"
 private const val AUTHORIZATION = "Authorization"
 private const val BEARER = "Bearer"
+
+// Breaking Bad
+private const val BASE_URL_BREAKING_BAD = "https://www.breakingbadapi.com/"
 
 // Provide Network
 private const val PROVIDE_BASE_URL = "base_url"
@@ -45,7 +51,7 @@ val viewModelModule = module {
 }
 
 val networkModule = module {
-    single(named(PROVIDE_BASE_URL)) { BASE_URL }
+    single(named(PROVIDE_BASE_URL)) { BASE_URL_BREAKING_BAD }
     single(named(PROVIDE_API_KEY)) { API_KEY }
     single(named(PROVIDE_GSON)) { provideGson() }
     single(named(PROVIDE_OKHTTP_CLIENT)) { provideOkHttpClient(get(named(PROVIDE_API_KEY))) }
@@ -55,10 +61,12 @@ val networkModule = module {
 
 val repositoryModule = module {
     single { NewsRepository() }
+    single { CharacterRepository() }
 }
 
 val serviceModule = module {
     single { get<Retrofit>().create(TopHeadlineService::class.java) }
+    single { get<Retrofit>().create(CharacterService::class.java) }
 }
 
 private fun provideGson(): Gson = GsonBuilder().create()
@@ -70,7 +78,7 @@ private fun provideOkHttpClient(apiKey: String): OkHttpClient {
     client.addInterceptor { chain ->
         val request = chain.request()
                 .newBuilder()
-                .addHeader(AUTHORIZATION, "$BEARER $apiKey")
+//                .addHeader(AUTHORIZATION, "$BEARER $apiKey")
                 .build()
         chain.proceed(request)
     }

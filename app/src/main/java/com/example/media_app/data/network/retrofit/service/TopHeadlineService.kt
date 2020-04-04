@@ -1,6 +1,6 @@
 package com.example.media_app.data.network.retrofit.service
 
-import com.example.media_app.data.entity.TopHeadline
+import com.example.media_app.data.network.dto.TopHeadline
 import retrofit2.http.GET
 import retrofit2.http.Query
 

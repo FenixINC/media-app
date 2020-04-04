@@ -1,4 +1,4 @@
-package com.example.media_app.data.entity
+package com.example.media_app.utils
 
 sealed class ResultState<out T> {
     class Loading<out T> : ResultState<T>() //--- showing progress

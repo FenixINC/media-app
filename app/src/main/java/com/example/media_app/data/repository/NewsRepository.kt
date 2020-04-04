@@ -1,6 +1,6 @@
 package com.example.media_app.data.repository
 
-import com.example.media_app.data.entity.TopHeadline
+import com.example.media_app.data.network.dto.TopHeadline
 import com.example.media_app.data.network.retrofit.service.TopHeadlineService
 import com.example.media_app.utils.Constants
 import kotlinx.coroutines.CoroutineScope
