@@ -1,10 +1,7 @@
 package com.example.media_app.presentation
 
 import android.app.Application
-import com.example.media_app.di.networkModule
-import com.example.media_app.di.repositoryModule
-import com.example.media_app.di.serviceModule
-import com.example.media_app.di.viewModelModule
+import com.example.media_app.di.*
 import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -34,7 +31,10 @@ class MediaApplication : Application() {
                 viewModelModule,
                 repositoryModule,
                 networkModule,
-                serviceModule
+                serviceModule,
+
+                databaseModule,
+                daoModule
         ))
     }
 }

@@ -1,4 +1,4 @@
-package com.example.media_app.data.database
+package com.example.media_app.data.database.dao
 
 import androidx.room.Delete
 import androidx.room.Insert
