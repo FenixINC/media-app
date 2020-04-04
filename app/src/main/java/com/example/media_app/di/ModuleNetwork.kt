@@ -1,16 +1,8 @@
 package com.example.media_app.di
 
-import com.example.media_app.presentation.favorite.FavoriteViewModel
-import com.example.media_app.presentation.home.HomeViewModel
-import com.example.media_app.presentation.login.LoginViewModel
-import com.example.media_app.presentation.main.MainViewModel
-import com.example.media_app.presentation.news.NewsViewModel
-import com.example.media_app.presentation.search.SearchViewModel
-import com.example.media_app.presentation.splash.SplashViewModel
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
-import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
