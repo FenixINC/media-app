@@ -1,9 +1,11 @@
 package com.example.media_app.utils
 
 import android.app.Activity
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -25,16 +27,28 @@ fun Fragment.showToastLong(text: String) {
 }
 
 //------ Snackbar
-fun Activity.showSnackbar(text: String) {
-//    Snackbar.make(this, text, Snackbar.LENGTH_SHORT)
+fun Activity.showSnackbarShort(view: View, text: String) {
+    Snackbar.make(view, text, Snackbar.LENGTH_SHORT).show()
+}
+
+fun Fragment.showSnackbarShort(view: View, text: String) {
+    Snackbar.make(view, text, Snackbar.LENGTH_SHORT).show()
+}
+
+fun Activity.showSnackbarLong(view: View, text: String) {
+    Snackbar.make(view, text, Snackbar.LENGTH_LONG).show()
+}
+
+fun Fragment.showSnackbarLong(view: View, text: String) {
+    Snackbar.make(view, text, Snackbar.LENGTH_LONG).show()
 }
 
 //------ Delegate
 fun TextView.text(): ReadWriteProperty<Any, String> =
-    object : ReadWriteProperty<Any, String> {
-        override fun getValue(thisRef: Any, property: KProperty<*>): String = text.toString()
+        object : ReadWriteProperty<Any, String> {
+            override fun getValue(thisRef: Any, property: KProperty<*>): String = text.toString()
 
-        override fun setValue(thisRef: Any, property: KProperty<*>, value: String) {
-            text = value
+            override fun setValue(thisRef: Any, property: KProperty<*>, value: String) {
+                text = value
+            }
         }
-    }

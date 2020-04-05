@@ -2,10 +2,11 @@ package com.example.media_app.presentation.login
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.Observer
 import com.example.media_app.R
-import com.example.media_app.presentation.main.MainActivity
+import com.example.media_app.data.network.dto.LoginModel
 import com.example.media_app.presentation.base.BaseFragment
+import com.example.media_app.presentation.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.koin.android.ext.android.inject
 
@@ -18,15 +19,29 @@ class LoginFragment : BaseFragment<LoginViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        viewModel.loginLiveData.observe(viewLifecycleOwner, Observer { viewModelData ->
+            when {
+//                viewModelData.data != null -> openHomePage()
+//                viewModelData.error != null -> showSnackbarLong(requireView(), viewModelData.error.message!!)
+            }
+        })
+
         btn_login.setOnClickListener {
-            startActivity(Intent(activity, MainActivity::class.java))
-            activity?.finish()
+            //TODO: check if user exists
+            val login = LoginModel(email = email.text.toString(), password = password.text.toString())
+            viewModel.getUser(login = login)
         }
 
         btn_create_account.setOnClickListener {
-//            findNavController().navigate(R.id.action_login_to_create_account)
+            // TODO: make this in CreateAccount screen!
+//            showLoading()
+//            val login = LoginModel(email = email.text.toString(), password = password.text.toString())
+//            viewModel.saveUser(login = login)
         }
     }
 
-
+    private fun openHomePage() {
+        startActivity(Intent(context, MainActivity::class.java))
+        activity?.finish()
+    }
 }

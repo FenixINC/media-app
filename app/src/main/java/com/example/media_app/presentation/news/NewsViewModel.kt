@@ -16,6 +16,6 @@ class NewsViewModel : BaseViewModel() {
     fun loadNews() = newsRepository.loadNewsList(
             { newsData.postValue(ViewModelData(data = it)) },
             { newsData.postValue(ViewModelData.error(error = it)) },
-            { newsData.postValue(ViewModelData.progress(progress = it)) }
+            { newsData.postValue(ViewModelData.progress(progress =  it)) }
     )
 }
