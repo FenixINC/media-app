@@ -32,9 +32,9 @@ class MediaApplication : Application() {
                 repositoryModule,
                 networkModule,
                 serviceModule,
-
                 databaseModule,
-                daoModule
+                daoModule,
+                ktorModule
         ))
     }
 }

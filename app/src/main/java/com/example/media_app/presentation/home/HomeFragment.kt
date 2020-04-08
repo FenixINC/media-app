@@ -32,7 +32,8 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
             viewModel.someText.set(binding.editText.text.toString())
         }
 
-        viewModel.loadAllCharacters()
+        viewModel.ktorLoadAllCharacters()
+//        viewModel.loadAllCharacters()
         viewModel.characterLiveData.observe(viewLifecycleOwner, Observer {
             val data = it
         })
