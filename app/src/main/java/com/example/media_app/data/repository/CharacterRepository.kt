@@ -45,6 +45,7 @@ class CharacterRepository : BaseRepository {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 var response = mutableListOf<CharacterResponse>()
+                //TODO: fix io.ktor.client.engine.ClientEngineClosedException: Client already closed
                 ktor.use { client ->
 //                    response = client.get<List<CharacterResponse>>("https://www.breakingbadapi.com/api/characters").toMutableList()
                     response = client.get { url { path(ktorCharacterService) } }
