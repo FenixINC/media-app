@@ -1,0 +1,1 @@
+C:\Taras\My Projects\media-app\buildSrc\build\classes\kotlin\main\AndroidSdk.class;C:\Taras\My Projects\media-app\buildSrc\build\classes\kotlin\main\BuildPlugin.class;C:\Taras\My Projects\media-app\buildSrc\build\classes\kotlin\main\Library.class;C:\Taras\My Projects\media-app\buildSrc\build\classes\kotlin\main\Version.class
