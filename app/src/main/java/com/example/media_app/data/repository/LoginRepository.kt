@@ -24,10 +24,12 @@ class LoginRepository : BaseRepository {
         }
     }
 
-    fun saveUser(login: LoginModel,
-                 onSuccess: (LoginModel) -> Unit,
-                 onError: (e: Exception) -> Unit,
-                 onProgress: (Boolean) -> Unit) {
+    fun saveUser(
+            login: LoginModel,
+            onSuccess: (LoginModel) -> Unit,
+            onError: (e: Exception) -> Unit,
+            onProgress: (Boolean) -> Unit
+    ) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 loginDao.insert(login.mapToLoginEntity())
