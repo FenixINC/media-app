@@ -12,7 +12,11 @@ class NewsRepository : BaseRepository {
 
     private val newsService by inject<TopHeadlineService>()
 
-    fun loadNewsList(onSuccess: (TopHeadline) -> Unit, onError: (e: Exception) -> Unit, onProgress: (Boolean) -> Unit) {
+    fun loadNewsList(
+            onSuccess: (TopHeadline) -> Unit,
+            onError: (e: Exception) -> Unit,
+            onProgress: (Boolean) -> Unit
+    ) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 onProgress(true)
