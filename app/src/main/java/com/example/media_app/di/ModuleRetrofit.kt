@@ -56,3 +56,9 @@ private fun provideRetrofit(baseUrl: String, gsonConverterFactory: GsonConverter
                 .addConverterFactory(gsonConverterFactory)
                 .client(client)
                 .build()
+// TODO: for Kotlin serialization
+//  val contentType = MediaType.get("application/json")
+//  val retrofit = Retrofit.Builder()
+//    .baseUrl("https://203.***.***.**:***/api/")
+//    .addConverterFactory(Json.asConverterFactory(contentType))
+//    .build()

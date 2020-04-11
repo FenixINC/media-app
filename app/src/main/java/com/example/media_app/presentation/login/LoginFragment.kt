@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.example.media_app.R
-import com.example.media_app.data.network.dto.LoginModel
+import com.example.media_app.presentation.model.LoginModel
 import com.example.media_app.presentation.base.BaseFragment
 import com.example.media_app.presentation.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_login.*

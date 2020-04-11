@@ -3,7 +3,7 @@ package com.example.media_app.data.repository
 import com.example.media_app.data.database.dao.LoginDao
 import com.example.media_app.data.database.entity.LoginEntity
 import com.example.media_app.data.mapper.mapToLoginEntity
-import com.example.media_app.data.network.dto.LoginModel
+import com.example.media_app.presentation.model.LoginModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

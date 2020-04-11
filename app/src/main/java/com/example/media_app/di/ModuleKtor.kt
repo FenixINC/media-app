@@ -5,6 +5,7 @@ import io.ktor.client.engine.android.Android
 import io.ktor.client.features.defaultRequest
 import io.ktor.client.features.json.GsonSerializer
 import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.features.logging.ANDROID
 import io.ktor.client.features.logging.LogLevel
 import io.ktor.client.features.logging.Logger
@@ -40,19 +41,23 @@ private fun provideKtor() = HttpClient(Android) {
         logger = Logger.ANDROID
         level = LogLevel.ALL
     }
+//    install(JsonFeature) {
+//        serializer = GsonSerializer {
+//            serializeNulls()
+//            disableHtmlEscaping()
+//            create()
+//        }
+//    }
+
     install(JsonFeature) {
-        serializer = GsonSerializer {
-            serializeNulls()
-            disableHtmlEscaping()
-            create()
-        }
+        serializer = KotlinxSerializer()
     }
 
-    defaultRequest {
-        url.takeFrom(URLBuilder().takeFrom(BASE_PATH).apply {
-            encodedPath += url.encodedPath
-        })
-    }
+//    defaultRequest {
+//        url.takeFrom(URLBuilder().takeFrom(BASE_PATH).apply {
+//            encodedPath += url.encodedPath
+//        })
+//    }
 }
 
 private fun provideCharacterService(): String {

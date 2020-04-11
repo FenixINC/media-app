@@ -5,6 +5,9 @@ plugins {
     id(BuildPlugin.kotlin_android_extensions)
     id(BuildPlugin.kotlin_kapt)
     id(BuildPlugin.apollo_graphql_plugin)
+
+//    kotlin("multiplatform") version "1.3.70"
+    kotlin("plugin.serialization") version Version.kotlin_version
 }
 
 android {
@@ -76,6 +79,17 @@ dependencies {
     implementation(Library.retrofit_lib)
     implementation(Library.converter_gson_lib)
 
+    // Kotlin
+    implementation(Library.kotlin_lib)
+
+    // Kotlin Coroutines
+    implementation(Library.kotlin_coroutines_core_lib)
+    implementation(Library.kotlin_coroutines_android_lib)
+
+    // Kotlin Serialization
+    implementation(Library.kotlin_serialization_lib)
+    implementation(Library.kotlin_serialization_converter_lib)
+
     // OkHttp
     implementation(Library.okhttp_lib)
     implementation(Library.okhttp_interceptor_lib)
@@ -87,13 +101,6 @@ dependencies {
 
     // Coil
     implementation(Library.coil_lib)
-
-    // Kotlin
-    implementation(Library.kotlin_lib)
-
-    // Kotlin Coroutines
-    implementation(Library.kotlin_coroutines_core_lib)
-    implementation(Library.kotlin_coroutines_android_lib)
 
     // Room:
     implementation(Library.room_ktx_lib)
@@ -124,6 +131,8 @@ dependencies {
 
     // Ktor
     implementation(Library.ktor_android_lib)
+    implementation(Library.ktor_json_jvm_lib)
+    implementation(Library.ktor_serialization_lib)
     implementation(Library.ktor_gson_lib)
 //    implementation "io.ktor:ktor-client-cio:$ktor_version"
     // Ktor JVM (necessary for logging extension)

@@ -10,6 +10,7 @@ import com.example.media_app.R
 import com.example.media_app.databinding.FragmentHomeBinding
 import com.example.media_app.presentation.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.serialization.ImplicitReflectionSerializer
 import org.koin.android.ext.android.inject
 
 class HomeFragment : BaseFragment<HomeViewModel>() {
@@ -26,16 +27,12 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         return binding.root
     }
 
+    @ImplicitReflectionSerializer
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.viewModel = viewModel
 
         setAdapter()
-
-        // Two way binding
-        binding.btnClick.setOnClickListener {
-            viewModel.someText.set(binding.editText.text.toString())
-        }
 
         viewModel.ktorLoadAllCharacters()
 //        viewModel.loadAllCharacters()

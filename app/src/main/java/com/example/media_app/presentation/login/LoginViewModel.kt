@@ -1,7 +1,7 @@
 package com.example.media_app.presentation.login
 
 import androidx.lifecycle.MutableLiveData
-import com.example.media_app.data.network.dto.LoginModel
+import com.example.media_app.presentation.model.LoginModel
 import com.example.media_app.data.repository.LoginRepository
 import com.example.media_app.presentation.base.BaseViewModel
 import com.example.media_app.utils.ViewModelData

@@ -19,33 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="Autofill,LabelFor,TextFields" />
-
-        <Button
-            android:id="@+id/btn_click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Click"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text" />
-
-        <TextView
-            android:id="@+id/text_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:text="@={viewModel.someText}"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@id/btn_click"
-            tools:text="Home Fragment" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
@@ -53,7 +26,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_result"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/list_item_character" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
