@@ -18,6 +18,7 @@ object BuildPlugin {
     const val kotlin_android                                 = "kotlin-android"
     const val kotlin_android_extensions                      = "kotlin-android-extensions"
     const val kotlin_kapt                                    = "kotlin-kapt"
+    const val kotlinx_serialization                          = "kotlinx-serialization"
 }
 
 object Version {
@@ -42,7 +43,7 @@ object Version {
     const val swiperefresh_layout_version                    = "1.0.0"
 
     // Retrofit
-    const val retrofit_version                               = "2.8.1"
+    const val retrofit_version                               = "2.7.0"
 
     // Kotlin
     const val kotlin_version                                 = "1.3.71"
@@ -133,7 +134,6 @@ object Library {
 
     // OkHttp
     const val okhttp_lib                                     = "com.squareup.okhttp3:okhttp:${Version.okhttp_version}"
-
     const val okhttp_interceptor_lib                         = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp_version}"
 
     // Glide

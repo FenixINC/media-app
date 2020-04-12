@@ -1,7 +1,7 @@
-package com.example.media_app.data.network.dto
+package com.example.media_app.data.network.dto.tmp
 
 import android.os.Parcelable
-import com.example.media_app.data.network.dto.Article
+import com.example.media_app.data.network.dto.tmp.Article
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 

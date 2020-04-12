@@ -1,7 +1,6 @@
 package com.example.media_app.data.repository
 
 import com.example.media_app.data.database.dao.CharacterDao
-import com.example.media_app.data.mapper.mapToCharacterEntityList
 import com.example.media_app.data.network.dto.CharacterResponse
 import com.example.media_app.data.network.retrofit.service.CharacterService
 import io.ktor.client.HttpClient
@@ -27,25 +26,7 @@ class CharacterRepository : BaseRepository {
     private val ktor by inject<HttpClient>()
     private val ktorCharacterService by inject<String>()
 
-    private val characterList = mutableListOf<CharacterResponse>()
-
     fun loadAllCharacters(
-            onSuccess: (List<CharacterResponse>) -> Unit,
-            onError: (e: Exception) -> Unit,
-            onProgress: (Boolean) -> Unit
-    ) {
-        CoroutineScope(Dispatchers.Main).launch {
-            try {
-                val characterResponse = characterService.getAllCharacters()
-                characterDao.insert(characterResponse.mapToCharacterEntityList())
-                onSuccess(characterResponse)
-            } catch (e: Exception) {
-                onError(e)
-            }
-        }
-    }
-
-    fun ktorLoadAllCharacters(
             onSuccess: (List<CharacterResponse>) -> Unit,
             onError: (e: Exception) -> Unit,
             onProgress: (Boolean) -> Unit
@@ -77,14 +58,10 @@ class CharacterRepository : BaseRepository {
         }
 
         val jsonBody = response.readText()
-//        Json {
-//            parseResponse(jsonBody)
-//        }
         return Json(JsonConfiguration.Stable.copy(
                 ignoreUnknownKeys = true,
                 isLenient = true,
                 useArrayPolymorphism = true
         )).parseList(jsonBody)
-//        return Json.nonstrict.parseList(jsonBody)
     }
 }

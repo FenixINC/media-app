@@ -1,4 +1,4 @@
-package com.example.media_app.data.network.dto
+package com.example.media_app.data.network.dto.tmp
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

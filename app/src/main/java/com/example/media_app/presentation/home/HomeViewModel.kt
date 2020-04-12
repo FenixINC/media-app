@@ -17,19 +17,19 @@ class HomeViewModel : BaseViewModel() {
 
     val characterLiveData = MutableLiveData<ViewModelData<List<CharacterResponse>, Exception, Boolean>>()
 
-    fun loadAllCharacters() = characterRepository.loadAllCharacters(
-            { characterLiveData.postValue(ViewModelData(data = it)) },
-            { characterLiveData.postValue(ViewModelData.error(error = it)) },
-            { characterLiveData.postValue(ViewModelData.progress(progress = it)) }
-    )
-
-    //    fun ktorLoadAllCharacters() = characterRepository.ktorLoadAllCharacters(
+//    fun loadAllCharacters() = characterRepository.loadAllCharacters(
+//            { characterLiveData.postValue(ViewModelData(data = it)) },
+//            { characterLiveData.postValue(ViewModelData.error(error = it)) },
+//            { characterLiveData.postValue(ViewModelData.progress(progress = it)) }
+//    )
+//
+//        fun ktorLoadAllCharacters() = characterRepository.ktorLoadAllCharacters(
 //            { characterLiveData.postValue(ViewModelData(data = it)) },
 //            { characterLiveData.postValue(ViewModelData.error(error = it)) },
 //            { characterLiveData.postValue(ViewModelData.progress(progress = it)) }
 //    )
     @ImplicitReflectionSerializer
-    fun ktorLoadAllCharacters() = CoroutineScope(Dispatchers.IO).launch {
+    fun loadAllCharacters() = CoroutineScope(Dispatchers.IO).launch {
         characterLiveData.postValue(ViewModelData(data = characterRepository.loadCharacterList()))
     }
 }

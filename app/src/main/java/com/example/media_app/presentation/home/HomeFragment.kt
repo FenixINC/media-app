@@ -34,8 +34,7 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
 
         setAdapter()
 
-        viewModel.ktorLoadAllCharacters()
-//        viewModel.loadAllCharacters()
+        viewModel.loadAllCharacters()
         viewModel.characterLiveData.observe(viewLifecycleOwner, Observer {
             it?.data?.let { list ->
                 characterAdapter.characterList = list.toMutableList()

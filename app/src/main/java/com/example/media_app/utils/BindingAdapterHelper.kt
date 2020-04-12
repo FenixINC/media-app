@@ -6,7 +6,7 @@ import androidx.annotation.NonNull
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.example.media_app.R
-import com.example.media_app.data.network.dto.Article
+import com.example.media_app.data.network.dto.tmp.Article
 import timber.log.Timber
 
 object BindingAdapterHelper {
