@@ -72,7 +72,7 @@ object Version {
     const val lifecycle_version                              = "2.2.0"
 
     // Navigation
-    const val navigation_version                             = "2.2.1"
+    const val navigation_version                             = "2.2.2"
 
     // Koin
     const val koin_version                                   = "2.1.5"
