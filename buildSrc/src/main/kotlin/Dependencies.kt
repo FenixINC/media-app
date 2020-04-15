@@ -41,6 +41,7 @@ object Version {
     const val recyclerview_version                           = "1.2.0-alpha02"
     const val constraint_layout_version                      = "2.0.0-beta4"
     const val swiperefresh_layout_version                    = "1.0.0"
+    const val viewpager2_version                             = "1.0.0"
 
     // Retrofit
     const val retrofit_version                               = "2.7.0"
@@ -116,6 +117,7 @@ object Library {
     const val recyclerview_lib                               = "androidx.recyclerview:recyclerview:${Version.recyclerview_version}"
     const val constraint_layout_lib                          = "androidx.constraintlayout:constraintlayout:${Version.constraint_layout_version}"
     const val swiperefresh_lib                               = "androidx.swiperefreshlayout:swiperefreshlayout:${Version.swiperefresh_layout_version}"
+    const val viewpager2_lib                                 = "androidx.viewpager2:viewpager2:${Version.viewpager2_version}"
 
     // Retrofit
     const val retrofit_lib                                   = "com.squareup.retrofit2:retrofit:${Version.retrofit_version}"
