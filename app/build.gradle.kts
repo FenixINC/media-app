@@ -74,6 +74,7 @@ dependencies {
     implementation(Library.recyclerview_lib)
     implementation(Library.constraint_layout_lib)
     implementation(Library.swiperefresh_lib)
+    implementation(Library.viewpager2_lib)
 
     // Retrofit
     implementation(Library.retrofit_lib)
