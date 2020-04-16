@@ -1,5 +1,6 @@
 plugins {
     id(BuildPlugin.android_application)
+    id(BuildPlugin.google_services)
     id(BuildPlugin.github_ben_manes)
     id(BuildPlugin.kotlin_android)
     id(BuildPlugin.kotlin_android_extensions)
@@ -151,6 +152,10 @@ dependencies {
 
     // Recyclerview animators
     implementation(Library.recyclerview_animators_lib)
+
+    // Firebase
+    implementation(Library.firebase_auth)
+    implementation(Library.android_gms_play_services)
 
     // Test
     testImplementation(Library.koin_test_lib)

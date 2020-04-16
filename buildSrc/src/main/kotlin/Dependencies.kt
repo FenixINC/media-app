@@ -15,6 +15,7 @@ object BuildPlugin {
     const val apollo_graphql_plugin                          = "com.apollographql.apollo"
     const val github_ben_manes                               = "com.github.ben-manes.versions"
     const val android_application                            = "com.android.application"
+    const val google_services                                = "com.google.gms.google-services"
     const val kotlin_android                                 = "kotlin-android"
     const val kotlin_android_extensions                      = "kotlin-android-extensions"
     const val kotlin_kapt                                    = "kotlin-kapt"
@@ -27,6 +28,7 @@ object Version {
     const val kotlin_plugin_version                          = "1.3.71"
     const val apollo_graphql_plugin_version                  = "1.3.3"
     const val github_ben_means_plugin_version                = "0.22.0"
+    const val google_services_version                        = "4.3.3"
 
     // Material
     const val material_version                               = "1.2.0-alpha05"
@@ -95,6 +97,10 @@ object Version {
 
     // Recyclerview animators
     const val recyclerview_animators_version                 = "2.3.0"
+
+    // Firebase
+    const val firebase_auth_version                          = "19.3.0"
+    const val android_gms_play_services                      = "18.0.0"
 
     // Test
     const val koin_test_version                              = "2.0.0"
@@ -189,6 +195,10 @@ object Library {
 
     // Recyclerview animators
     const val recyclerview_animators_lib                     = "jp.wasabeef:recyclerview-animators:${Version.recyclerview_animators_version}"
+
+    // Firebase
+    const val firebase_auth                                  = "com.google.firebase:firebase-auth:${Version.firebase_auth_version}"
+    const val android_gms_play_services                      = "com.google.android.gms:play-services-auth:${Version.android_gms_play_services}"
 
     // Test
     const val koin_test_lib                                  = "org.koin:koin-test:${Version.koin_test_version}"

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.media_app.R
 import com.example.media_app.presentation.base.BaseFragment
+import com.example.media_app.presentation.login.LoginActivity
 import com.example.media_app.presentation.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +23,8 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(2500L)
-            startActivity(Intent(context, MainActivity::class.java))
+//            startActivity(Intent(context, MainActivity::class.java))
+            startActivity(Intent(context, LoginActivity::class.java))
             activity?.finish()
         }
     }

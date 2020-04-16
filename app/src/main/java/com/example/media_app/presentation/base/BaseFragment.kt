@@ -15,11 +15,15 @@ import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.findNavController
 import com.example.media_app.R
+import com.example.media_app.presentation.model.AppConfig
 import com.example.media_app.utils.createProgressBar
 
 abstract class BaseFragment<VM : BaseViewModel> : Fragment(), LifecycleOwner {
 
     protected abstract val viewModel: VM
+
+    protected val appConfig: AppConfig
+        get() = viewModel.appConfig
 
     protected var progressDialog: AlertDialog? = null
 

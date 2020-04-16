@@ -34,7 +34,8 @@ class MediaApplication : Application() {
                 serviceModule,
                 databaseModule,
                 daoModule,
-                ktorModule
+                ktorModule,
+                configModule
         ))
     }
 }

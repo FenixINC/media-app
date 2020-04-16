@@ -13,6 +13,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath("com.github.ben-manes:gradle-versions-plugin:${Version.github_ben_means_plugin_version}")
         classpath("com.apollographql.apollo:apollo-gradle-plugin:${Version.apollo_graphql_plugin_version}")
+        classpath("com.google.gms:google-services:${Version.google_services_version}")
 
 //        classpath(kotlin("gradle-plugin", version = "${Version.kotlin_version})"))
 //        classpath(kotlin("serialization", version = "${Version.kotlin_version})"))

@@ -1,10 +1,13 @@
 package com.example.media_app.utils
 
 import android.app.Activity
+import android.os.Build
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import com.example.media_app.R
 import com.google.android.material.snackbar.Snackbar
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
@@ -27,20 +30,36 @@ fun Fragment.showToastLong(text: String) {
 }
 
 //------ Snackbar
+@RequiresApi(Build.VERSION_CODES.M)
 fun Activity.showSnackbarShort(view: View, text: String) {
-    Snackbar.make(view, text, Snackbar.LENGTH_SHORT).show()
+    val snackbar = Snackbar.make(view, text, Snackbar.LENGTH_SHORT)
+    snackbar.setTextColor(resources.getColor(R.color.white, null))
+    snackbar.setBackgroundTint(resources.getColor(R.color.red, null))
+    snackbar.show()
 }
 
+@RequiresApi(Build.VERSION_CODES.M)
 fun Fragment.showSnackbarShort(view: View, text: String) {
-    Snackbar.make(view, text, Snackbar.LENGTH_SHORT).show()
+    val snackbar = Snackbar.make(view, text, Snackbar.LENGTH_SHORT)
+    snackbar.setTextColor(resources.getColor(R.color.white, null))
+    snackbar.setBackgroundTint(resources.getColor(R.color.red, null))
+    snackbar.show()
 }
 
+@RequiresApi(Build.VERSION_CODES.M)
 fun Activity.showSnackbarLong(view: View, text: String) {
-    Snackbar.make(view, text, Snackbar.LENGTH_LONG).show()
+    val snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG)
+    snackbar.setTextColor(resources.getColor(R.color.white, null))
+    snackbar.setBackgroundTint(resources.getColor(R.color.red, null))
+    snackbar.show()
 }
 
+@RequiresApi(Build.VERSION_CODES.M)
 fun Fragment.showSnackbarLong(view: View, text: String) {
-    Snackbar.make(view, text, Snackbar.LENGTH_LONG).show()
+    val snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG)
+    snackbar.setTextColor(resources.getColor(R.color.white, null))
+    snackbar.setBackgroundTint(resources.getColor(R.color.red, null))
+    snackbar.show()
 }
 
 //------ Delegate
