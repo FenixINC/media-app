@@ -5,13 +5,16 @@ import androidx.annotation.StyleRes
 import com.example.media_app.R
 
 enum class UserRole(
-        val asString: String,
+        val asString: String/*,
         @ColorRes val color: Int,
         @ColorRes val colorDark: Int,
-        @StyleRes val dialogTheme: Int
+        @StyleRes val dialogTheme: Int*/
 ) {
-    DREAMER("dreamer", R.color.app_red, R.color.app_red_dark, R.style.dreamer_date_picker),
-    DOER("doer", R.color.app_blue, R.color.app_blue_dark, R.style.doer_date_picker);
+//    USER("user", R.color.app_red, R.color.app_red_dark, R.style.dreamer_date_picker),
+//    ADMIN("admin", R.color.app_blue, R.color.app_blue_dark, R.style.doer_date_picker);
+
+    ADMIN("admin"),
+    USER("user");
 
     companion object {
         fun getRole(role: String) = values().first { it.asString == role }

@@ -26,4 +26,29 @@
     <dimen name="padding_bottom">8dp</dimen>
 
     <dimen name="corner_radius_article">10dp</dimen>
+
+    <dimen name="spacing_tiny">2dp</dimen>
+    <dimen name="spacing_quarter">4dp</dimen>
+    <dimen name="spacing_half">8dp</dimen>
+    <dimen name="spacing_offer_icon_padding">10dp</dimen>
+    <dimen name="spacing_default">16dp</dimen>
+    <dimen name="spacing_big">24dp</dimen>
+    <dimen name="spacing_double">32dp</dimen>
+    <dimen name="spacing_triple">48dp</dimen>
+    <dimen name="spacing_quadruple">64dp</dimen>
+    <dimen name="spacing_screen_bottom">84dp</dimen>
+    <dimen name="spacing_negative_image_emotion">-90dp</dimen>
+
+    <dimen name="size_create_account_circle_radius">35dp</dimen>
+    <dimen name="size_create_account_circle_diameter">70dp</dimen>
+    <dimen name="size_feeling_item_height">89dp</dimen>
+    <dimen name="size_feeling_icon_height">23dp</dimen>
+    <dimen name="size_call_to_action_banner_height">415dp</dimen>
+    <dimen name="size_dream_details_single_emotion_bubble_shape">100dp</dimen>
+
+    <dimen name="text_size_default">14sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_22sp">22sp</dimen>
+    <dimen name="text_size_title">34sp</dimen>
+    <dimen name="text_size_options_item">22sp</dimen>
 </resources>

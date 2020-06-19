@@ -3,6 +3,7 @@ package com.example.media_app.presentation.login
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.media_app.R
 import com.example.media_app.presentation.base.BaseFragment
 import com.example.media_app.presentation.main.MainActivity
@@ -20,8 +21,16 @@ class LoginFragment : BaseFragment<LoginViewModel>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        createAccountClick()
         loginClick()
         loginObserve()
+    }
+
+    private fun createAccountClick() {
+        btn_create_account.setOnClickListener {
+            hideKeyboard()
+            findNavController().navigate(R.id.action_login_to_create_account)
+        }
     }
 
     private fun loginClick() {
@@ -29,7 +38,7 @@ class LoginFragment : BaseFragment<LoginViewModel>() {
             hideKeyboard()
             showLoading()
             val login = LoginModel(email = email_field.text.toString(), password = password_field.text.toString())
-            viewModel.firebaseLogin(login = login)
+            viewModel.firebaseAuthLogin(login = login)
         }
     }
 

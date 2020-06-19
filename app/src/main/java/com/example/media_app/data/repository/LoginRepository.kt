@@ -1,34 +1,42 @@
 package com.example.media_app.data.repository
 
-import com.example.media_app.data.mapper.mapToUser
+import com.example.media_app.chat.Constants.COLLECTION_USER
+import com.example.media_app.chat.Constants.EMAIL
 import com.example.media_app.presentation.model.LoginModel
-import com.example.media_app.presentation.model.User
-import com.example.media_app.utils.ViewModelData
 import com.google.firebase.auth.FirebaseAuth
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
-import kotlin.coroutines.suspendCoroutine
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.tasks.await
+import org.koin.core.inject
 
 class LoginRepository : BaseRepository {
 
-    suspend fun firebaseLogin(login: LoginModel): ViewModelData<User, Exception, Boolean> =
-            suspendCoroutine { continuation ->
-                FirebaseAuth.getInstance()
-                        .signInWithEmailAndPassword(login.email, login.password)
-                        .addOnCompleteListener { task ->
-                            when {
-                                task.isSuccessful -> {
-                                    task.result?.user?.let { user ->
-                                        mapToUser(user).run {
-                                            continuation.resume(ViewModelData(this))
-                                        }
-                                    }
-                                            ?: continuation.resumeWithException(Exception(task.exception?.message))
-                                }
-                                else -> {
-                                    continuation.resumeWithException(Exception(task.exception?.message))
-                                }
-                            }
-                        }
+    private val firebaseAuth by inject<FirebaseAuth>()
+    private val firebaseDb by inject<FirebaseFirestore>()
+
+    suspend fun firebaseGetUser(login: LoginModel): Flow<Boolean> =
+            flow {
+                val request = firebaseDb
+                        .collection(COLLECTION_USER)
+                        .whereEqualTo(EMAIL, login.email)
+                        .get()
+                val response = request.await()
+
+                if (response != null) {
+                    emit(true)
+                }
+            }
+
+    suspend fun firebaseAuthLogin(login: LoginModel): Flow<Boolean> =
+            flow {
+                val request = firebaseAuth.signInWithEmailAndPassword(login.email, login.password)
+                val response = request.await()
+
+                if (response.user != null) {
+                    response.user?.let { user ->
+                        emit(value = true)
+                    }
+                }
             }
 }

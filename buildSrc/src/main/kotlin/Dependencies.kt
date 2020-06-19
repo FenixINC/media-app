@@ -99,8 +99,12 @@ object Version {
     const val recyclerview_animators_version                 = "2.3.0"
 
     // Firebase
+    const val android_gms_play_services_version              = "18.0.0"
     const val firebase_auth_version                          = "19.3.0"
-    const val android_gms_play_services                      = "18.0.0"
+    const val firebase_firestore_version                     = "21.4.2"
+    const val firebase_storage_version                       = "19.1.1"
+    const val firebase_ktx_version                           = "21.4.2"
+    const val coroutines_play_services_version               = "1.3.5"
 
     // Test
     const val koin_test_version                              = "2.0.0"
@@ -197,8 +201,15 @@ object Library {
     const val recyclerview_animators_lib                     = "jp.wasabeef:recyclerview-animators:${Version.recyclerview_animators_version}"
 
     // Firebase
-    const val firebase_auth                                  = "com.google.firebase:firebase-auth:${Version.firebase_auth_version}"
-    const val android_gms_play_services                      = "com.google.android.gms:play-services-auth:${Version.android_gms_play_services}"
+    const val firebase_auth_lib                              = "com.google.firebase:firebase-auth:${Version.firebase_auth_version}"
+    const val android_gms_play_services_lib                  = "com.google.android.gms:play-services-auth:${Version.android_gms_play_services_version}"
+    const val firebase_firestore_lib                         = "com.google.firebase:firebase-firestore:${Version.firebase_firestore_version}"
+    const val firebase_storage_lib                           = "com.google.firebase:firebase-storage:${Version.firebase_storage_version}"
+    const val firebase_ktx_lib                               = "com.google.firebase:firebase-firestore-ktx:${Version.firebase_ktx_version}"
+    const val coroutines_play_services_lb                    = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Version.coroutines_play_services_version}"
+//    const val google_guava_lib                               = "com.google.guava:guava:27.0.1-android"
+//    const val firebase_inappmessaging_lib                    = "com.google.firebase:firebase-inappmessaging-display:17.2.0"
+    const val guava_conflict                                 = "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"
 
     // Test
     const val koin_test_lib                                  = "org.koin:koin-test:${Version.koin_test_version}"

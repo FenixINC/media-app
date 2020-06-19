@@ -15,7 +15,7 @@ class EpisodeViewModel : BaseViewModel() {
 
     private val episodeRepository by inject<EpisodeRepository>()
 
-    val episodeLiveData = MutableLiveData<ViewModelData<List<EpisodeResponse>, Exception, Boolean>>()
+    val episodeLiveData = MutableLiveData<ViewModelData<List<EpisodeResponse>, Exception>>()
 
     @ImplicitReflectionSerializer
     fun getAllEpisodes() = CoroutineScope(Dispatchers.IO).launch {

@@ -35,7 +35,8 @@ class MediaApplication : Application() {
                 databaseModule,
                 daoModule,
                 ktorModule,
-                configModule
+                configModule,
+                firebaseModule
         ))
     }
 }

@@ -3,14 +3,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_item_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:text="Open item details"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_open_post_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Post Fragment"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_open_user_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open User List Fragment"
             android:textAllCaps="false" />
     </LinearLayout>
 </layout>

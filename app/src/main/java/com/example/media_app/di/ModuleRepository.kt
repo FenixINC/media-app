@@ -1,9 +1,6 @@
 package com.example.media_app.di
 
-import com.example.media_app.data.repository.CharacterRepository
-import com.example.media_app.data.repository.EpisodeRepository
-import com.example.media_app.data.repository.LoginRepository
-import com.example.media_app.data.repository.NewsRepository
+import com.example.media_app.data.repository.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -11,4 +8,8 @@ val repositoryModule = module {
     single { CharacterRepository() }
     single { EpisodeRepository() }
     single { LoginRepository() }
+    single { PostRepository() }
+    single { CreateAccountRepository() }
+    single { UserListRepository() }
+    single { ChatRepository() }
 }

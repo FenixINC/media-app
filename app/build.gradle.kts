@@ -27,7 +27,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -154,8 +157,15 @@ dependencies {
     implementation(Library.recyclerview_animators_lib)
 
     // Firebase
-    implementation(Library.firebase_auth)
-    implementation(Library.android_gms_play_services)
+    implementation(Library.android_gms_play_services_lib)
+    implementation(Library.firebase_auth_lib)
+    implementation(Library.firebase_firestore_lib)
+    implementation(Library.firebase_storage_lib)
+    implementation(Library.firebase_ktx_lib)
+    implementation(Library.coroutines_play_services_lb)
+//    implementation(Library.google_guava_lib)
+//    implementation(Library.firebase_inappmessaging_lib)
+    implementation(Library.guava_conflict)
 
     // Test
     testImplementation(Library.koin_test_lib)

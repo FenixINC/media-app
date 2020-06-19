@@ -39,7 +39,7 @@ class NewsFragment : BaseFragment<NewsViewModel>() {
         viewModel.newsData.observe(viewLifecycleOwner, Observer { setNewsList(it) })
     }
 
-    private fun setNewsList(newsData: ViewModelData<TopHeadline, Exception, Boolean>) {
+    private fun setNewsList(newsData: ViewModelData<TopHeadline, Exception>) {
         if (newsData.data != null) {
             newsAdapter.newsList = newsData.data.articles.toMutableList()
         } else {

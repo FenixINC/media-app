@@ -15,7 +15,7 @@ class HomeViewModel : BaseViewModel() {
 
     private val characterRepository by inject<CharacterRepository>()
 
-    val characterLiveData = MutableLiveData<ViewModelData<List<CharacterResponse>, Exception, Boolean>>()
+    val characterLiveData = MutableLiveData<ViewModelData<List<CharacterResponse>, Exception>>()
 
 //    fun loadAllCharacters() = characterRepository.loadAllCharacters(
 //            { characterLiveData.postValue(ViewModelData(data = it)) },

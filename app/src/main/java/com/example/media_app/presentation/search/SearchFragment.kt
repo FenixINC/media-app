@@ -19,5 +19,13 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
         btn_item_details.setOnClickListener {
             findNavController().navigate(R.id.action_search_to_item_details)
         }
+
+        btn_open_post_fragment.setOnClickListener {
+            findNavController().navigate(R.id.action_search_to_post_fragment)
+        }
+
+        btn_open_user_list.setOnClickListener {
+            findNavController().navigate(R.id.action_search_to_user_list)
+        }
     }
 }

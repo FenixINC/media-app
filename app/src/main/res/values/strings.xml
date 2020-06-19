@@ -20,4 +20,7 @@
     <string name="message_empty_data_swipe_refresh">There no data.\nSwipe to refresh.</string>
     <string name="message_empty_data">There no data.</string>
     <string name="visit_website">Visit Website</string>
+
+    <!--  Arguments  -->
+    <string name="arg_user_id">arg_user_id</string>
 </resources>

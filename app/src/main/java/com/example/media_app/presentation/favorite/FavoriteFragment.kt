@@ -13,11 +13,6 @@ class FavoriteFragment : BaseFragment<FavoriteViewModel>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity?.title = getString(R.string.header_favorites)
-    }
 
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        activity?.finish()
-//    }
+    }
 }

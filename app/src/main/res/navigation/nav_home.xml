@@ -41,6 +41,14 @@
         <action
             android:id="@+id/action_search_to_item_details"
             app:destination="@id/item_details_fragment" />
+
+        <action
+            android:id="@+id/action_search_to_post_fragment"
+            app:destination="@id/post_fragment" />
+
+        <action
+            android:id="@+id/action_search_to_user_list"
+            app:destination="@+id/user_list_fragment" />
     </fragment>
 
     <!--  FavoriteFragment  -->
@@ -56,4 +64,16 @@
         android:name="com.example.media_app.presentation.general_details.ItemDetailFragment"
         android:label="@string/header_item_details"
         tools:layout="@layout/fragment_item_details" />
+
+    <!--  PostFragment  -->
+    <fragment
+        android:id="@+id/post_fragment"
+        android:name="com.example.media_app.chat.post.PostFragment"
+        android:label="Posts"
+        tools:layout="@layout/fragment_posts" />
+
+    <fragment
+        android:id="@+id/user_list_fragment"
+        android:name="com.example.media_app.chat.userlist.UserListFragment"
+        tools:layout="@layout/fragment_user_list" />
 </navigation>

@@ -14,17 +14,13 @@ class NewsRepository : BaseRepository {
 
     fun loadNewsList(
             onSuccess: (TopHeadline) -> Unit,
-            onError: (e: Exception) -> Unit,
-            onProgress: (Boolean) -> Unit
+            onError: (e: Exception) -> Unit
     ) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                onProgress(true)
                 val newsResponse = newsService.getTopHeadlineList(Constants.COUNTRY_US)
-                onProgress(false)
                 onSuccess(newsResponse)
             } catch (e: Exception) {
-                onProgress(false)
                 onError(e)
             }
         }
